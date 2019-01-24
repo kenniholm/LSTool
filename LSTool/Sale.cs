@@ -8,17 +8,18 @@ namespace LSTool
 {
     public class Sale
     {
-        string ItemName { get; set; }
-        string SaleNo { get; set; }
-        string Country { get; set; }
-        string Currency { get; set; }
-        string DateOfSale { get; set; }
-        float SalePrice { get; set; }
+        public string ItemName { get; set; }
+        public string SalesNo { get; }
+        public string Country { get; set; }
+        public string Currency { get; set; }
+        public string DateOfSale { get; set; }
+        public float NetPrice { get; set; }
+        public float VAT { get; set; }
 
-        public Sale (string saleNo)
-        {
-            SaleNo = saleNo;
-        }
+        //public Sale (string salesNo)
+        //{
+        //    SalesNo = salesNo;
+        //}
     }
 
 }

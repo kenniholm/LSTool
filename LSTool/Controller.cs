@@ -8,6 +8,6 @@ namespace LSTool
 {
     public class Controller
     {
-        
+
     }
 }

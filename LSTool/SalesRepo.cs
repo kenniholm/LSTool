@@ -18,9 +18,16 @@ namespace LSTool
         {
             return sales;
         }
-        public Sale SetSaleAttributes(Sale sale, string itemName, string  )
+        public Sale GetSpecificSale(string salesNo)
         {
-
+            foreach (Sale item in sales)
+            {
+                if (item.SalesNo.Equals(salesNo))
+                {
+                    return item;
+                }
+            }
+            throw new SystemException("A sale with that sales number doesn't exist.");
         }
     }
 }

@@ -16,10 +16,10 @@ namespace LSTool
         public float NetPrice { get; set; }
         public float VAT { get; set; }
 
-        //public Sale (string salesNo)
-        //{
-        //    SalesNo = salesNo;
-        //}
+        public Sale ()
+        {
+            
+        }
     }
 
 }

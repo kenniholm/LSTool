@@ -24,5 +24,24 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        private void NewSale_Click(object sender, RoutedEventArgs e)
+        {
+            InsertSalesWindow insertWindow = new InsertSalesWindow();
+            insertWindow.Show();
+            this.Close();
+        }
+
+        private void CalcVAT_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ShowSales_Click(object sender, RoutedEventArgs e)
+        {
+            ShowSalesWindow showWin = new ShowSalesWindow();
+            showWin.Show();
+            this.Close();
+        }
     }
 }

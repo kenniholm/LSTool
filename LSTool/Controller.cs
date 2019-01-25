@@ -8,6 +8,8 @@ namespace LSTool
 {
     public class Controller
     {
+        SalesRepo repo = new SalesRepo();
 
+        
     }
 }

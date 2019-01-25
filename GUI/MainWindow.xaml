@@ -9,10 +9,10 @@
     <Grid>
         <Label Content="LSTool" Margin="221,0,219,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="64" FontSize="48"/>
         <Label Content="Main Menu" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,94,0,0" Height="39" Width="111" FontSize="20"/>
-        <Button Content="Enter a new sale" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Margin="10,138,0,0" Height="44"/>
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Margin="10,187,0,0" Height="44"/>
-        <Button Content="Show All Sales" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Margin="10,236,0,0" Height="44"/>
+        <Button Name="CalcVAT" Content="Calculate total VAT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Margin="10,187,0,0" Height="44" Click="CalcVAT_Click"/>
+        <Button Name="ShowSales" Content="Show All Sales" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Margin="10,236,0,0" Height="44" Click="ShowSales_Click"/>
         <Label Content="Made by Kenniholm" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="666,380,0,0" Height="29"/>
+        <Button Name="NewSale" Content="Enter new sale" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Margin="10,138,0,0" Height="44" Click="NewSale_Click"/>
 
     </Grid>
 </Window>

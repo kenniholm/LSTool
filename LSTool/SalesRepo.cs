@@ -8,19 +8,16 @@ namespace LSTool
 {
     public class SalesRepo
     {
-        List<Sale> sales = new List<Sale>();
-
-        public void AddSale(Sale Sale)
+        DBconnector db = new DBconnector();
+        public List<Sale> SalesFromDB()
         {
-            sales.Add(Sale);
-        }
-        public List<Sale> GetSales()
-        {
+            List<Sale> sales = new List<Sale>();
+            sales = db.ShowSales();
             return sales;
         }
         public Sale GetSpecificSale(string salesNo)
         {
-            foreach (Sale item in sales)
+            foreach (Sale item in SalesFromDB())
             {
                 if (item.SalesNo.Equals(salesNo))
                 {

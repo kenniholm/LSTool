@@ -15,16 +15,16 @@ namespace LSTool
             float helper = sale.VAT + 1;
             return sale.NetPrice / helper;
         }
-        public float TotalMomsFromAllSales(List<Sale> sales, string sortByCountry) // Per country or all sales?
+        public float TotalMomsFromAllSales(List<Sale> sales) // Per country or all sales?
         {
             List <Sale> momsCalcOnSales = repo.SalesFromDB();
+            float totalVAT = 0;
+
             foreach (Sale item in momsCalcOnSales)
             {
-                if (item.Country.Equals(sortByCountry))
-                {
-                    
-                }
+                totalVAT += item.VAT;
             }
+            return totalVAT;
         }
     }
 }

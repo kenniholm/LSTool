@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        ResizeMode="NoResize">
     <Grid>
         <Label Content="LSTool" Margin="221,0,219,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="64" FontSize="48"/>
         <Label Content="Main Menu" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,94,0,0" Height="39" Width="111" FontSize="20"/>

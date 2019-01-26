@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="ShowSalesWindow" Height="450" Width="800">
+        Title="ShowSalesWindow" Height="450" Width="800"
+        ResizeMode="NoResize">
     <Grid>
-        
+        <ListView HorizontalAlignment="Left" Height="152" VerticalAlignment="Top" Width="411" Margin="179,119,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
     </Grid>
 </Window>

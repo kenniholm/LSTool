@@ -15,6 +15,11 @@ namespace LSTool
             sales = db.ShowSales();
             return sales;
         }
+        public void AddSale(string ItemName, string Country, string Currency, string DateOfSale, float NetPrice, float VAT)
+        {
+            Sale sale = new Sale(ItemName, Country, Currency, DateOfSale, NetPrice, VAT);
+            db.InsertSaleData(sale);
+        }
         public Sale GetSpecificSale(string salesNo)
         {
             foreach (Sale item in SalesFromDB())

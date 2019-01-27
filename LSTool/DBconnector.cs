@@ -7,6 +7,7 @@ using System.Data.SQLite;
 using System.Data;
 using System.Configuration;
 using Dapper;
+using System.IO;
 
 namespace LSTool
 {

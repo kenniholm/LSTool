@@ -34,11 +34,11 @@ namespace GUI
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            string ItemName, Date, Country, Currency, NetPricestring, VATstring;
+            string ItemName, DateOfSale, Country, Currency, NetPricestring, VATstring;
             float NetPrice, VAT;
 
             ItemName = ItemBox.Text;
-            Date = DateBox.Text;
+            DateOfSale = DateBox.Text;
             Country = CountryBox.Text;
             Currency = CurrencyBox.Text;
             NetPricestring = PriceBox.Text;
@@ -50,7 +50,14 @@ namespace GUI
             {
                 MessageBox.Show("Net Price and VAT fields can only contain numbers!");
             }
-            con.InsertSales(ItemName, Country, Currency, Date, NetPrice, VAT);
+            con.InsertSales(ItemName, Country, Currency, DateOfSale, NetPrice, VAT);
+            MessageBox.Show("Sale has been added.");
+            ItemBox.Text = "";
+            DateBox.Text = "";
+            CountryBox.Text = "";
+            CurrencyBox.Text = "";
+            PriceBox.Text = "";
+            VATbox.Text = "";
         }
     }
 }

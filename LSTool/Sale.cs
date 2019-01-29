@@ -20,9 +20,10 @@ namespace LSTool
         {
             
         }
-        public Sale(string itemName, string country, string currency, string DateOfSale, float netPrice, float vat)
+        public Sale(string itemName, string country, string currency, string dateOfSale, float netPrice, float vat)
         {
             ItemName = itemName;
+            DateOfSale = dateOfSale;
             Country = country;
             Currency = currency;
             NetPrice = netPrice;

@@ -6,15 +6,28 @@
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
         Title="ShowSalesWindow" Height="450" Width="800"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        Background="LightGray">
     <Grid>
-        <ListView HorizontalAlignment="Left" Height="152" VerticalAlignment="Top" Width="411" Margin="179,119,0,0">
+        <ListView HorizontalAlignment="Left" Height="280" VerticalAlignment="Top" Width="558" Margin="128,60,0,0">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn Header="Sales ID" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="Item" DisplayMemberBinding="{Binding Item}"/>
+                    <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date}"/>
+                    <GridViewColumn Header="Country" DisplayMemberBinding="{Binding Country}"/>
+                    <GridViewColumn Header="Net Price" DisplayMemberBinding="{Binding Price}"/>
+                    <GridViewColumn Header="Currency" DisplayMemberBinding="{Binding Currency}"/>
+                    <GridViewColumn Header="VAT" DisplayMemberBinding="{Binding vat}"/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Content="Sales" RenderTransformOrigin="3.486,1.41" Margin="128,15,581,361" FontSize="18"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="97" Height="37" Margin="675,369,0,0"/>
+        <Button Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" Margin="710,159,0,0" Height="22"/>
+        <Button Content="Modify" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" Margin="710,132,0,0" Height="22"/>
+        <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" Margin="710,105,0,0" Height="22"/>
 
     </Grid>
 </Window>

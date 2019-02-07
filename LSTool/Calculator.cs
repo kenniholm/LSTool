@@ -9,20 +9,19 @@ namespace LSTool
     public class Calculator
     {
         SalesRepo repo = new SalesRepo();
-        public float MomsCalcForOneSale(string serialNo)
+        public float MomsCalcForOneSale(Sale sale)
         {
-            Sale sale = repo.GetSpecificSale(serialNo);
             float helper = sale.VAT + 1;
             return sale.NetPrice / helper;
         }
-        public float TotalMomsFromAllSales(List<Sale> sales) // Per country or all sales?
+        public float TotalMomsFromAllSales() // Per country or all sales?
         {
             List <Sale> momsCalcOnSales = repo.SalesFromDB();
             float totalVAT = 0;
 
             foreach (Sale item in momsCalcOnSales)
             {
-                totalVAT += item.VAT;
+                totalVAT += MomsCalcForOneSale(item);
             }
             return totalVAT;
         }

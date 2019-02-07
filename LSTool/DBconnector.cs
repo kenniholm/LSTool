@@ -22,7 +22,6 @@ namespace LSTool
         {
             using (SQLiteConnection connect = new SQLiteConnection(ConnectionString()))
             {
-                //connect.Execute("insert into SALES (ItemName, DateOfSale, Country, Currency, NetPrice, VAT) values (@ItemName, @DateOfSale, @Country, @Currency, @NetPrice, @VAT", sale);
                 connect.Open();
                 SQLiteCommand cmd = new SQLiteCommand(connect);
                 cmd.CommandText = @"INSERT INTO SALES (ItemName, DateOfSale, Country, Currency, NetPrice, VAT) VALUES(@ItemName, @DateOfSale, @Country, @Currency, @NetPrice, @VAT)";

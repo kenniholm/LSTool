@@ -11,8 +11,9 @@ using System.IO;
 
 namespace LSTool
 {
-    public class DBconnector
+    public class DBconnector : IPublisher, ISubscriber
     {
+        List<ISubscriber> subscribers = new List<ISubscriber>();
         public string ConnectionString(string id = "Default")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
@@ -43,6 +44,29 @@ namespace LSTool
                 var output = connect.Query<Sale>("select * from SALES", new DynamicParameters());
                 return output.ToList();
             }
+        }
+
+        public void NotifySubscribers(string message)
+        {
+            foreach (ISubscriber sub in subscribers)
+            {
+                sub.Update(this, message);
+            }
+        }
+
+        public void RegisterSubscriber(ISubscriber observer)
+        {
+            subscribers.Add(observer);
+        }
+
+        public void RemoveSubscriber(ISubscriber observer)
+        {
+            subscribers.Remove(observer);
+        }
+
+        public void Update(IPublisher publisher, string message)
+        {
+            NotifySubscribers(message);
         }
     }
 }

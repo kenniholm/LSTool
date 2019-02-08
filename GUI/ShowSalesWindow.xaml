@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="ShowSalesWindow" Height="450" Width="800"
+        Title="LSTool Sales" Height="450" Width="800"
         ResizeMode="NoResize"
         Background="LightGray">
     <Grid>
@@ -24,7 +24,7 @@
         </ListView>
         <Label HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <Label Content="Sales" RenderTransformOrigin="3.486,1.41" Margin="128,15,581,361" FontSize="18"/>
-        <Button Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="97" Height="37" Margin="675,369,0,0"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="97" Height="37" Margin="675,369,0,0" Click="Button_Click"/>
         <Button Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" Margin="710,159,0,0" Height="22"/>
         <Button Content="Modify" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" Margin="710,132,0,0" Height="22"/>
         <Button Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" Margin="710,105,0,0" Height="22"/>

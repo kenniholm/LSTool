@@ -16,7 +16,7 @@ namespace LSTool
         }
         public float TotalMomsFromAllSales() // Per country or all sales?
         {
-            List <Sale> momsCalcOnSales = repo.SalesFromDB();
+            List <Sale> momsCalcOnSales = repo.ShowAllSales();
             float totalVAT = 0;
 
             foreach (Sale item in momsCalcOnSales)

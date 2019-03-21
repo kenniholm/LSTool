@@ -9,10 +9,10 @@ namespace LSTool
     public class SalesRepo
     {
         DBconnector db = new DBconnector();
-        public List<Sale> SalesFromDB()
+        public List<Sale> ShowAllSales()
         {
             List<Sale> sales = new List<Sale>();
-            sales = db.ShowSales();
+            sales = db.ShowAllSales();
             return sales;
         }
         public void AddSale(string ItemName, string Country, string Currency, string DateOfSale, float NetPrice, float VAT)
@@ -22,7 +22,7 @@ namespace LSTool
         }
         public Sale GetSpecificSale(string salesNo)
         {
-            foreach (Sale item in SalesFromDB())
+            foreach (Sale item in ShowAllSales())
             {
                 if (item.SalesNo.Equals(salesNo))
                 {

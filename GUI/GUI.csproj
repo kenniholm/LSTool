@@ -67,6 +67,7 @@
     <Compile Include="InsertSalesWindow.xaml.cs">
       <DependentUpon>InsertSalesWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ListItems.cs" />
     <Compile Include="ShowSalesWindow.xaml.cs">
       <DependentUpon>ShowSalesWindow.xaml</DependentUpon>
     </Compile>

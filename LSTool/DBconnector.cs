@@ -21,23 +21,30 @@ namespace LSTool
 
         public void InsertSaleData(Sale sale)
         {
-            using (SQLiteConnection connect = new SQLiteConnection(ConnectionString()))
+            try
             {
-                connect.Open();
-                SQLiteCommand cmd = new SQLiteCommand(connect);
-                cmd.CommandText = @"INSERT INTO SALES (ItemName, DateOfSale, Country, Currency, NetPrice, VAT) VALUES(@ItemName, @DateOfSale, @Country, @Currency, @NetPrice, @VAT)";
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add(new SQLiteParameter("@ItemName", sale.ItemName));
-                cmd.Parameters.Add(new SQLiteParameter("@DateOfSale", sale.DateOfSale));
-                cmd.Parameters.Add(new SQLiteParameter("@Country", sale.Country));
-                cmd.Parameters.Add(new SQLiteParameter("@Currency", sale.Currency));
-                cmd.Parameters.Add(new SQLiteParameter("@NetPrice", sale.NetPrice));
-                cmd.Parameters.Add(new SQLiteParameter("@VAT", sale.VAT));
-                cmd.ExecuteNonQuery();
-                connect.Close();
+                using (SQLiteConnection connect = new SQLiteConnection(ConnectionString()))
+                {
+                    connect.Open();
+                    SQLiteCommand cmd = new SQLiteCommand(connect);
+                    cmd.CommandText = @"INSERT INTO SALES (ItemName, DateOfSale, Country, Currency, NetPrice, VAT) VALUES(@ItemName, @DateOfSale, @Country, @Currency, @NetPrice, @VAT)";
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.Add(new SQLiteParameter("@ItemName", sale.ItemName));
+                    cmd.Parameters.Add(new SQLiteParameter("@DateOfSale", sale.DateOfSale));
+                    cmd.Parameters.Add(new SQLiteParameter("@Country", sale.Country));
+                    cmd.Parameters.Add(new SQLiteParameter("@Currency", sale.Currency));
+                    cmd.Parameters.Add(new SQLiteParameter("@NetPrice", sale.NetPrice));
+                    cmd.Parameters.Add(new SQLiteParameter("@VAT", sale.VAT));
+                    cmd.ExecuteNonQuery();
+                    connect.Close();
+                }
+            }
+            catch(SQLiteException e)
+            {
+                throw new SQLiteException("An error occured: " + e.Message);
             }
         }
-        public List<Sale> ShowSales()
+        public List<Sale> ShowAllSales()
         {
             using (IDbConnection connect = new SQLiteConnection(ConnectionString()))
             {

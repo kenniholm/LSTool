@@ -19,7 +19,7 @@ namespace GUI
     /// </summary>
     public partial class InsertSalesWindow : Window
     {
-        Controller con = new Controller();
+        LSTool.Application.Controller con = new LSTool.Application.Controller();
         public InsertSalesWindow()
         {
             InitializeComponent();

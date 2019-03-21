@@ -9,7 +9,7 @@
         ResizeMode="NoResize"
         Background="LightGray">
     <Grid>
-        <ListView HorizontalAlignment="Left" Height="280" VerticalAlignment="Top" Width="558" Margin="128,60,0,0">
+        <ListView Name="SalesView" HorizontalAlignment="Left" Height="280" VerticalAlignment="Top" Width="558" Margin="128,60,0,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Sales ID" DisplayMemberBinding="{Binding Id}"/>
@@ -18,7 +18,7 @@
                     <GridViewColumn Header="Country" DisplayMemberBinding="{Binding Country}"/>
                     <GridViewColumn Header="Net Price" DisplayMemberBinding="{Binding Price}"/>
                     <GridViewColumn Header="Currency" DisplayMemberBinding="{Binding Currency}"/>
-                    <GridViewColumn Header="VAT" DisplayMemberBinding="{Binding vat}"/>
+                    <GridViewColumn Header="VAT" DisplayMemberBinding="{Binding VAT}"/>
                 </GridView>
             </ListView.View>
         </ListView>

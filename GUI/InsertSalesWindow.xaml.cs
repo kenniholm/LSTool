@@ -29,35 +29,27 @@ namespace GUI
         {
             MainWindow main = new MainWindow();
             main.Show();
-            this.Close();
+            Close();
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            string ItemName, DateOfSale, Country, Currency, NetPricestring, VATstring;
-            float NetPrice, VAT;
-
-            ItemName = ItemBox.Text;
-            DateOfSale = DateBox.Text;
-            Country = CountryBox.Text;
-            Currency = CurrencyBox.Text;
-            NetPricestring = PriceBox.Text;
-            VATstring = VATbox.Text;
-            if (float.TryParse(NetPricestring, out NetPrice) & float.TryParse(VATstring, out VAT))
-            {
-            }
-            else
+            string ItemName = ItemBox.Text;
+            string DateOfSale = DateBox.Text;
+            string Country = CountryBox.Text;
+            string Currency = CurrencyBox.Text;
+            if (!float.TryParse(PriceBox.Text, out float NetPrice) & float.TryParse(VATbox.Text, out float VAT))
             {
                 MessageBox.Show("Net Price and VAT fields can only contain numbers!");
             }
             con.InsertSales(ItemName, Country, Currency, DateOfSale, NetPrice, VAT);
             MessageBox.Show("Sale has been added.");
-            ItemBox.Text = "";
-            DateBox.Text = "";
-            CountryBox.Text = "";
-            CurrencyBox.Text = "";
-            PriceBox.Text = "";
-            VATbox.Text = "";
+            ItemBox.Clear();
+            DateBox.Clear();
+            CountryBox.Clear();
+            CurrencyBox.Clear();
+            PriceBox.Clear();
+            VATbox.Clear();
         }
     }
 }

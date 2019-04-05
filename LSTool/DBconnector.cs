@@ -21,8 +21,6 @@ namespace LSTool
 
         public void InsertSaleData(Sale sale)
         {
-            try
-            {
                 using (SQLiteConnection connect = new SQLiteConnection(ConnectionString()))
                 {
                     connect.Open();
@@ -38,18 +36,32 @@ namespace LSTool
                     cmd.ExecuteNonQuery();
                     connect.Close();
                 }
-            }
-            catch(SQLiteException e)
-            {
-                throw new SQLiteException("An error occured: " + e.Message);
-            }
+            
         }
-        public List<Sale> ShowAllSales()
+        public List<Sale> ShowAllSales(SQLiteCommand cmd) // Fix DB names
         {
-            using (IDbConnection connect = new SQLiteConnection(ConnectionString()))
+            using (SQLiteConnection connect = new SQLiteConnection(ConnectionString()))
             {
-                var output = connect.Query<Sale>("select * from SALES", new DynamicParameters());
-                return output.ToList();
+                connect.Open();
+                List<Sale> data = new List<Sale>();
+                Sale saleObject = new Sale();
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+
+                        saleObject.ItemName = reader["ItemName"].ToString();
+                        saleObject.DateOfSale = reader["Lokation"].ToString();
+                        saleObject.Country = reader["ProblemBeskrivelse"].ToString();
+                        saleObject.Currency = reader["Tidspunkt"].ToString();
+                        saleObject.NetPrice = (float)reader["ExtraInfo"];
+                        saleObject.VAT = (float)reader["Status"];
+
+                        data.Add(saleObject);
+                    }
+                }
+                return data;
             }
         }
 
